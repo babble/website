@@ -1,0 +1,541 @@
+html, body, form, fieldset, h1, h2, h3, h4, h5, h6, p, pre, blockquote, ul, ol, dl, address {
+	margin:0;
+	padding:0;
+}
+
+body {
+ 	margin: 0;
+	padding: 0;
+	font-family: helvetica, arial, sans-serif;
+	background-color: #ffffff;
+	color: #333;
+	font-size:85%;
+	text-align: center;
+}
+
+div, p, ul, ol, code {
+	font-size: 100%;
+	font-family: helvetica, arial, sans-serif;
+}
+
+code {
+	font-size: 12px;
+	font-family:monospace;
+}
+
+pre {
+	font-size: 12px;
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	background-color:#eff0e2;
+	font-family:monospace;
+	line-height:130%;
+	margin: .7em 0 1em 0;
+	padding: 1em .5em 1em 1.5em;
+}
+
+h1, h2, h3, h4, p, ul, ol, dl {
+	padding-bottom: 1em;
+	line-height: 1.3em;
+}
+
+h1 {
+	font-size: 182%;
+	color: #f2780c;
+	font-weight: normal; 
+}  
+
+h2 {
+	font-size: 131%;
+	font-weight: normal; 
+}  
+
+h3 {
+	font-size: 108%;
+}  
+
+h4 {
+	font-size: 100%;
+}  
+
+p, .help {
+	padding: 0em 0px 1em 0px;   
+	line-height: 1.5em;
+	color:#333;
+}
+
+hr {
+	margin: 1em 0 2em 0;
+	border: 0;
+	width: 100%;
+	color: #ddd;
+	background-color: #ddd;
+	height: 1px;
+}
+
+td {
+    padding: .5em;
+	font-size: 100%;
+	line-height: 1.5em;
+	color:#333;
+}
+
+div.hr hr {
+	display: none;
+}
+
+ul, ol {position: relative; }
+
+ul, ol {
+	padding-left: 16px;
+	line-height: 1.5em;
+}
+
+ul li {
+  padding-left: 16px;
+  list-style-type: none;
+  background-image: url(../images/list_bullet_blue.gif);
+  background-repeat: no-repeat;
+}
+
+ul li ul, ul li ol {
+	margin-left: 0px;
+	padding-bottom:0;
+}
+
+em {
+	font-weight: normal;
+	font-style: italic;
+}
+
+i {
+	font-weight: normal;
+	font-style: italic;
+}
+
+a, a:visited {
+	color: #1ca42b;
+	text-decoration: none;
+	font-weight:normal;
+	border-bottom: 1px dotted #1ca42b;
+	border-bottom: none;
+}
+
+a:hover {
+	border-bottom: 1px dotted #1ca42b;
+	*border-bottom: 1px solid;
+}
+
+a.no-underline:hover {
+	border-bottom: none;
+}
+
+a#active {
+	color: #8cd948;
+}
+
+a.docs, a.docs:visited {
+	padding-left: 15px;
+	color: #1ca42b;
+	text-decoration: none;
+	font-weight:normal;
+	background:url(../images/icon_arrows_green.gif) no-repeat left bottom;
+}
+
+a.docs:hover {
+	color: #8cd948;
+	background:url(../images/icon_arrows_green_hover.gif) no-repeat left bottom;
+}
+
+img {
+	border: none;
+}
+
+#headerback {
+	background-color: #E7E4D6;
+	text-align: left;
+	border-bottom: 1px solid #c4a485;
+}
+
+#logo a, #logo a:hover {
+	border: none;
+}
+
+#nav ul {
+	padding:0; 
+	font-size: 123.1%;
+}
+
+#nav ul li {
+	margin: 0;
+	padding: 0	;
+	background-image: none;
+	list-style-type: none;
+	list-style-image: none;
+}
+
+#nav ul li a, #nav ul li a:visited {
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: normal;
+	*font-weight: bold;
+	border: none;
+}
+
+#nav ul li a:hover {
+	color: #8cd948;
+	border: none;
+}
+
+#nav ul li a#active, #nav ul li a.active_page, #nav ul li a.active_page:visited {
+	color: #8cd948;
+}
+
+#maincontent, #wiki {
+	min-height: 300px;
+}
+
+#leftmain h2 {
+	font-weight: bold;
+	font-size: 116%;
+}
+
+#rightmain h2 {
+	margin-top: .5em;
+	padding-bottom: .25em; 
+}
+
+#rightmain p {
+	margin-top: 0; 
+	margin-bottom: .66em;
+	padding-bottom: 2em;
+	background-image:url(../images/dotted_line.gif);
+	background-position: bottom left;
+	background-repeat: repeat-x;
+}
+
+#rightmain div {
+	line-height: 1.5em;
+}
+
+#rightmain a {
+	font-weight: bold;
+}
+
+#footer p {
+	padding-top: .5em; 
+	text-align: left;
+	color: #a58a70;
+	font-size: 93%;
+}
+
+div.form-su {
+	margin-top: 1em; 
+	padding: 1em 1em 2.5em 1em; 
+	border: 1px solid #ddd;
+}
+
+input.submit {
+	cursor: pointer;
+}
+
+.entry-content {
+	margin-bottom: 2em;
+}
+
+.addcomment {
+	padding-bottom: 0;
+}
+
+/* Most a Tab Area */
+
+#tab_controller {
+	margin-top: 2em; 
+	margin-bottom: 2em;
+}
+
+#tab_controller ul {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #ccc;
+	height: 30px;
+}
+
+#tab_controller li {
+    border-right: 1px solid #ccc;
+	float:left;
+    list-style: none;
+    font-size: 1.1em;
+	margin:0;
+    padding: 0 12px 0 12px; 
+	background-image: none;
+	line-height:30px;
+}
+
+#tab_controller li.tab_selected {
+    border-top: 1px solid #ccc;
+    font-weight: bold;
+	background-color:white;
+}
+
+#tab_controller li.tab_notselected {
+	border-top: 1px solid #fff;
+}
+
+
+/* Sign Up Form */
+
+form.edit {  /* set width in form, not fieldset (still takes up more room w/ fieldset width */
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+}
+
+form.edit textarea {
+	width: auto;
+}
+
+form.edit fieldset, div.fieldset {
+	width: auto;
+  	border: 1px solid #dddddd;
+  	padding: 20px 10px;        /* padding in fieldset support spotty in IE */
+  	margin: 0;
+  	/ * clear: both; note that this clear causes inputs to break to left in ie5.x mac, commented out */
+}
+
+form.edit input.text {
+	width: 200px;
+	border: 1px solid;
+	border-color: #999 #ccc #ccc #999;
+}
+
+form.edit input.submit, input.button {
+	border: 1px solid;
+	border-color: #ccc #999 #999 #ccc;
+}
+
+legend {
+	font-size: 123%; 
+}
+
+form.edit label {
+	display: block;  /* block float the labels to left column, set a width */
+	float: left;
+	width: 14em;
+	padding: 0;
+	margin: 15px 0 0; /* set top margin same as form input - textarea etc. elements */
+	text-align: right;
+	font-weight: bold;
+}
+
+form.edit input, form.edit textarea, form.edit select {
+	/* display: inline; inline display must not be set or will hide submit buttons in IE 5x mac */
+	width:auto;      /* set width of form elements to auto-size, otherwise watch for wrap on resize */
+	margin:10px 0 0 10px; /* set margin on left of form elements rather than right of
+                              label aligns textarea better in IE */
+}
+
+form.edit textarea { overflow: auto; }
+
+form.edit .required{font-weight:bold;} /* uses class instead of div, more efficient */
+
+form.edit br {
+	clear:left; /* setting clear on inputs didn't work consistently, so brs added for degrade */
+}
+
+/* Search Form */
+
+form.search {  /* set width in form, not fieldset (still takes up more room w/ fieldset width */
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+}
+
+form.search input.text {
+	margin-bottom: 4px;
+	border: 1px solid;
+	border-color: #999 #ccc #ccc #999;
+}
+
+form.search input.submit {
+	margin-bottom: 7px;
+	border: 1px solid;
+	border-color: #ccc #999 #999 #ccc;
+}
+
+/* Universal Search */
+
+#universal-search {
+    width: 187px;
+    height: 21px;
+	background:transparent url(../images/search_back.png) no-repeat center !important;
+	background-image:url(../images/search_back.gif);
+	background-repeat: no-repeat;
+}
+
+#universal-search #searchtext {
+    float: left;
+    padding: 0;
+    margin: 5px 0 0 6px;
+    border: 0;
+    width: 14em;
+	font-size: 11px;
+	color: #666;
+    background: none;
+}
+
+#universal-search #go {
+    float: right;
+    margin: 0;
+}
+
+/* Layout */
+
+#universal-search {
+	position: absolute;
+	top: 1em;
+	right: 1em;
+}
+
+#headerback {
+	margin: 0 auto;
+	width: 100%;
+	height: 112px;
+	min-width: 950px; 
+	text-align: center;
+}
+
+#container {
+	width: 950px;
+	margin: 0 auto;
+	text-align: left;
+}
+
+#logo {
+	margin: 0; 
+	width: 200px;
+	height: 107px;
+	background:transparent url(../images/logo10gen_rev.png) no-repeat bottom left !important;
+	background-image:url(../images/logo10gen_rev.gif);
+	background-repeat: no-repeat;
+	float:left;
+}
+
+#logo div {
+	margin-top: 12px; 	
+}
+
+#nav {
+	margin: 0;
+	padding-left: 40px; 
+	width: 560px;
+	height: 112px;
+	float: left;
+}
+
+#nav ul {
+	margin-top: 69px;
+	line-height: 1em;
+}
+
+#nav ul li {
+	margin: 0 3em 0 0;
+	float: left;
+}
+
+#stripe {
+	width: 100%;
+	height: 4px;
+	font-size: 1px;
+	clear: both;
+	border-top: 4px solid #715132;	
+}
+
+#maincontent {
+	margin: 0 auto;
+	padding-top: 2em;
+	width: 815px; 
+	clear: both;
+	text-align: left;
+}
+
+#leftmain {
+	margin: 0; 
+	width: 575px;
+	float:left;
+}
+
+#rightmain {
+	margin: 0; 
+	width: 174px;
+	float: right;
+}
+
+#footer {
+	margin: 0 auto;
+	padding-top: 4em;
+	padding-bottom: 1em;
+	width: 815px;
+    clear: both;
+}
+
+#footer p {
+	border-top: 1px solid #ddd;
+}
+
+.floatright {
+	float: right;
+}
+
+.floatleft {
+	float: left;
+}
+
+.clearboth {
+	clear:both;
+}
+
+.aligncenter {
+	text-align:center;
+}
+
+.imageindent {
+	margin: .5em 0 1em 4em;
+}
+
+.imagecenter {
+	margin: 0 0 .5em 0;
+}
+
+.imageleft {
+	margin: 0 1em .5em 0;
+}
+
+.imageright {
+	margin: 0 0 .5em 1em;
+}
+
+.alert {
+    text-align: center;
+    color: #519a33;
+    font-weight: bold;
+}
+
+.notice {
+	margin-bottom: 1em; 
+    text-align: center;
+    color: #ff6600;
+    font-weight: bold;
+}
+
+.smaller_italics {
+	font-size: 93%;
+	font-style: italic;
+}
+
+p.login {
+	margin: 1em 0 0 180px;
+}
+.red {
+     color: #FF0000;
+}

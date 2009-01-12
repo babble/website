@@ -1,0 +1,280 @@
+h1 {
+	font-size: 182%;
+	color: #333;
+	font-weight: normal; 
+	line-height: 1.2em;
+	padding-bottom: .75em; 
+}
+
+#leftmain h2 { 
+	font-size:146.5%;
+	padding-top: .5em;
+}
+
+ul {padding-bottom: 0;}
+
+.htmltable a, .htmltable a:visited {
+	font-size: 11px;
+	color: #2c65af;
+	text-decoration: none;
+	font-weight:normal;
+}
+
+.htmltable a:hover {
+	color: #0f2659;
+}
+
+.htmltable a#active {
+	color: #2c65af;
+}
+
+table.wikitable {
+	border: 1px solid #666;
+	border-collapse: collapse;
+}
+
+table.wikitable th {
+	padding: .5em;
+	font-size: 100%;
+	color: #333;
+	text-align: left;
+}
+
+table.wikitable td {
+	padding: .5em;
+	font-size: 93%;
+	text-align: left;
+	border-top: 1px solid #999; 
+}
+
+a, a:visited {
+	color: #2c65af;
+}
+
+a:hover {
+	color: #0f2659;
+	border-bottom: 1px dotted #0f2659;
+	*border-bottom: 1px solid;
+}
+
+a#active {
+	color: #2c65af;
+}
+
+ul li, ul .column-one-third li {
+  background-image: url(../images/list_bullet_blue.gif);
+}
+
+li.u {
+  background-image: url(../images/list_bullet_blue.gif);
+}
+
+div.content {
+	padding-bottom: 0;
+	line-height: 1.4em;
+	padding: 0 0 1em 0;
+}
+
+div.content p {
+	margin-top: 0;
+	padding: 1em 0 0 0;
+}
+
+a.chapter, a.chapter:visited, a.chapter:hover {
+    background-color: #2c65af; 
+    padding: 5px; 
+    margin: 2px;
+    color: #fff; 
+    text-decoration: none;
+	border-bottom: none;
+    font-weight: bold;
+    font-size: 93%;
+}
+
+form {  
+	padding: 0 0 1em 0;
+	font-size: 12px;
+}
+
+form input.text {
+	margin-right: .5em;
+	border: 1px solid;
+	border-color: #999 #ccc #ccc #999;
+}
+
+form input.submit {
+	border: 1px solid;
+	border-color: #ccc #999 #999 #ccc;
+}
+
+a.external-link, a.external-link:visited {
+	padding-right: 14px; 
+	background:url(../images/icon-external-link.gif) no-repeat right -190px;
+}
+
+a.external-link:hover {
+	background:url(../images/icon-external-link.gif) no-repeat right 0;
+}
+
+.border-dashed {
+	border: 1px dashed #519a33;
+}
+
+/* api */
+
+.description {
+	line-height: 1.4em;
+	margin-bottom: 1em;
+}
+
+caption, div.sectionTitle
+{
+	background-color: #dac9ba;
+	border: 1px #dac9ba solid;
+	text-align: left;
+	padding: .25em .5em;
+	border: 1px #dac9ba solid;
+}
+
+.summaryTable thead { display: none; }
+
+.summaryTable td {
+	padding: .125em;
+	border-bottom: 1px #dac9ba solid;
+	border-right: 1px #dac9ba solid;
+}
+
+.summaryTable td.attributes {
+	border-left: 1px #dac9ba solid;
+	width: 140px;
+	text-align: right;
+}
+
+td.attributes, .fixedFont {
+	font-family: Courier,monospace;
+	font-size: 100%;
+}
+
+div.fixedFont {
+	margin-top: .5em;
+	line-height: 1.4em;
+}
+
+.summaryTable td.nameDescription
+{
+	text-align: left;
+	font-size: 13px;
+	line-height: 15px;
+}
+
+.summaryTable td.nameDescription, .description
+{
+	line-height: 1.4em;
+	padding: 4px;
+	padding-left: 4px;
+}
+
+.summaryTable { 
+	width: 100%; 
+	*width: auto;
+	margin-bottom: 2em; 
+}
+
+.detailList { 
+	margin-top: 1em; 
+	line-height: 1.4em;
+}
+
+div.details {
+	width: auto;
+}
+
+div.navbox-api h3 {
+	margin-bottom: .5em;
+	padding:0;
+	border-bottom: 1px solid #dac9ba;
+}
+
+div.navbox-api {
+	margin-top: 0;
+}
+
+div.navbox-api ul {
+	padding-left: .5em;
+	line-height: 1.5em;
+}
+
+div.navbox-api ul li {
+  padding-left: 16px;
+  list-style-type: none;
+  background-image: url(../images/list_bullet_blue.gif);
+  background-repeat: no-repeat;
+}
+
+#rightmain a {
+  font-weight: normal;
+}
+
+/* docs left nav */
+
+#leftwiki ul {
+	padding-left: 0;
+}
+
+#leftwiki ul ul {
+	padding-left: .5em;
+}
+
+#leftwiki ul li {
+  background-image: url(../images/list_bullet_blue.gif);
+}
+
+#leftwiki h3 {
+	padding-bottom: .25em;
+}
+
+/* Layout */
+
+#maincontent {
+	margin: 0 auto;
+	padding-top: 2em;
+	width: 950px; 
+	clear: both;
+	text-align: left;
+}
+
+#leftmain {
+	margin: 0; 
+	padding-left: 20px;
+	width: 725px;
+	float:left;
+	border-left: 1px solid #dac9ba;
+}
+
+#leftwiki {
+	margin: 0; 
+	padding-right: 10px;
+	width: 190px;
+	float: left;
+}
+
+#footer {
+	margin: 0 auto;
+	padding-top: 4em;
+	padding-bottom: 1em;
+	width: 950px;
+    clear: both;
+}
+
+#footer p {
+	border-top: 1px solid #dac9ba;
+}
+
+#leftmain form {
+	clear: both;
+	padding-top: 2em;
+}
+
+form#searchform, form#pagingform {
+	padding-top: 0;
+}

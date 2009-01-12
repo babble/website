@@ -1,0 +1,222 @@
+h1 {
+	padding-bottom: 0;
+	font-size: 182%;
+	color: #333;
+	font-weight: normal; 
+	line-height: 1.2em;
+}
+
+h1 a, h1 a:visited {
+	color: #333;
+	border-color: #333;
+}
+
+h1 a:hover {
+	text-decoration: none;
+	border-color: #333;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a.continue, a.continue:visited {
+	color: #333;
+}
+
+h1 a.continue:hover {
+}
+
+p.byline {
+	font-size: 100%;
+	font-style: italic;
+	color: #999;
+}
+
+p.byline-main {
+	margin-bottom: 0;
+}
+
+p.byline a, p.byline a:visited {
+	color: #999;
+}
+
+p.byline a:hover {
+	text-decoration: none;
+	border-bottom: 1px dotted #999;
+}
+
+div.posts-snippets-block {
+	margin-top: 1em;
+}
+
+ul li {
+	list-style-type: none;
+}
+
+div.summary {
+	margin-top: -.5em;
+	padding-top: 0;
+	line-height: 1.5em;
+}
+
+.date-circle {
+	float: left;
+	position: relative;
+	left: -20px;
+	margin-left: -50px;
+	margin-top: 2px;
+	padding: 4px 0 0 0;
+	width: 41px;
+	height: 41px;
+	background-image:url(../images/date_circle_orange.gif);
+	background-repeat: no-repeat;
+	text-align: center;
+	line-height: 16px;
+	font-size: 14px;
+	color: white;
+	font-weight: bold;
+}
+
+div.entry-content {
+	margin-bottom:2em;
+}
+
+div.entry-content p.listings {
+	margin-top: -.5em;
+}
+
+.dateline {
+	color: #999;
+	font-size: 85%;
+	text-transform:uppercase;
+}
+
+.alert {
+	color:#ff6600;
+}
+
+.orange {
+	color: #f2780c;
+}
+
+#comments h2 {
+	margin-top: 2em;
+	margin-bottom: 0;
+	padding-bottom: 4px;
+	font-size: 131%;
+	font-weight: normal;
+}
+
+#comments h3 {
+	font-size: 100%;
+	padding-top: 6px;
+	padding-bottom: .66em;
+	padding-left: 2em;
+}
+
+#comments h3 a, #comments h3 a:visited {
+	color: #333;
+	font-weight:bold;
+	border: none;
+}
+
+#comments h3 a:hover {
+	text-decoration: none;
+	border-bottom: 1px dotted #333;
+}
+
+#comments .num-circle {
+	float: left;
+	margin-top: 1px;
+	margin-left: 0px;
+	padding: 0 0 0 0;
+	line-height: 24px;
+	width: 21px;
+	height: 21px;
+	background-image:url(../images/num_circle_blue.gif);
+	background-repeat: no-repeat;
+	text-align: center;
+	font-size: 12px;
+	color: white;
+	font-weight: bold;
+}
+
+#comments .green-circle {
+	background-image:url(../images/num_circle_green.gif);
+	background-repeat: no-repeat;
+}
+
+#comments div.container {
+	padding: .5em;
+	border-top: 1px dotted #ccc;
+}
+
+#comments div.comments {
+	padding: .5em 0 0 0;
+	border-top: 1px dotted #ccc;
+}
+
+#comments div.comments input.text {
+	width: 50%;
+}
+
+#comments div.comments textarea {
+	font-family: helvetica, arial, sans-serif;
+	margin-bottom: 6px;
+	padding: 2px;
+	font-size: 14px; 
+	border: 1px solid;
+	border-color: #999 #ccc #ccc #999;
+	width: 100%;
+}
+
+#comments div.zebra {
+	background-color: #fafafa;
+}
+
+#comments p {
+	font-size: 93%;
+	margin: 0 1em .5em 0;
+	padding-bottom: 0;
+	border-bottom: none;
+	line-height: 1.3em;
+}
+
+#leftmain {
+	margin: 0 0 0 65px; 
+	width: 525px;
+	float:left;
+}
+
+#rightmain h2 {
+	margin-top: 1em;
+	padding-bottom: 0;
+}
+
+#rightmain p {
+	margin-top: 0; 
+	margin-bottom: 1em;
+	padding-bottom: 1em;
+	background-image: none;
+}
+
+#rightmain a, #rightmain a:visited {
+	display:block;
+	padding: 4px;
+	line-height: 1.2em;
+	color: #666;
+	font-size: 85%;
+	font-weight: normal;
+	border-top: 1px dotted #ccc;
+	border-bottom: none;
+}
+
+#rightmain a:hover {
+	display:block;
+	line-height: 1.2em;
+	color: #333;
+	background-color: #eee;
+	font-size: 85%;
+	font-weight: normal;
+}

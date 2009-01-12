@@ -1,0 +1,25 @@
+tr.white-main td {
+	white-space: normal;
+}
+
+tr.white-main td a.no-wrap {
+	white-space: nowrap;
+}
+
+a, a:visited {
+	color: #2c65af;
+}
+
+a:hover {
+	color: #0f2659;
+	border-bottom: 1px dotted #0f2659;
+	*border-bottom: 1px solid;
+}
+
+a#active {
+	color: #2c65af;
+}
+
+span.highlight {
+    background : #d8feb0;
+}
