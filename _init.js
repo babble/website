@@ -36,7 +36,7 @@ var wikiFooter = function( wikiPage ) {
     }
 }
 
-allowModule = { wiki: {  readOnly:false, nosearch:true, menuFooter: wikiFooter, 
+allowModule = { wiki: { prefix:"pub.",  readOnly:false, nosearch:true, menuFooter: wikiFooter, 
                       },
                 analytics: {}
               };
