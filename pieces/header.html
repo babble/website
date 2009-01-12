@@ -1,6 +1,4 @@
 <% 
-if( request.notice )
-   user = null;
 inWiki = true;
 inBlog = request.getURI().match( /^.blog/ );
 head.push('<link type="text/css" rel="stylesheet" href="/appassets/css/site.css" />');
@@ -23,24 +21,26 @@ if ( inBlog || activePage == "irc" ) {
 </head>
 <body>
 
-  <div id="universal-search">	
-    <form action="/search">
-      <input id="searchtext" class="text" type="text" id="searchtext" name="q" onfocus="if ( this.value == this.defaultValue ) this.value = ''; " onblur="if ( this.value == '' ) this.value = this.defaultValue; " value="Search" />
-      <input id="go" type="image" name="search" src="/appassets/images/button_trans_search.gif" value="Search" />
-    </form>
-    <div>	
+<div id="top-right">
+	  <p style="margin:0; text-align: right; ">
       <% if (user) { %>
         Logged in as <%= user.name %>&nbsp<a href="/~~/user/logout">Logout</a>
       <% } else { %>
         <a href="/login">Login</a> or <a href="/userSignup">sign up</a>
       <% } %>
-    </div>
+ 	  </p>
+  <div id="universal-search">	
+    <form action="/search">
+      <input id="searchtext" class="text" type="text" id="searchtext" name="q" onfocus="if ( this.value == this.defaultValue ) this.value = ''; " onblur="if ( this.value == '' ) this.value = this.defaultValue; " value="Search" />
+      <input id="go" type="image" name="search" src="/appassets/images/button_trans_search.gif" value="Search" />
+    </form>
   </div>
+</div>
 
   <div id="headerback">
     <div id="container">
       <div id="logo">
-        <div><a href="/"><img src="/appassets/images/transparent.gif" width="200" height="96" alt="MongoDB logo" /></a></div>
+        <div><a href="/"><img src="/appassets/images/transparent.gif" width="200" height="76" alt="MongoDB logo" /></a></div>
       </div>
     </div>
   </div>

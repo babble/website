@@ -389,9 +389,15 @@ form.search input.submit {
     margin: 0;
 }
 
+/* User Login */
+
+#user-login {
+	text-align: right;
+}
+
 /* Layout */
 
-#universal-search {
+#top-right {
 	position: absolute;
 	top: 1em;
 	right: 1em;
@@ -414,15 +420,15 @@ form.search input.submit {
 #logo {
 	margin: 0; 
 	width: 200px;
-	height: 107px;
-	background:transparent url(../images/logo10gen_rev.png) no-repeat bottom left !important;
-	background-image:url(../images/logo10gen_rev.gif);
+	height: 95px;
+	background:transparent url(../images/logoMongoV1.png) no-repeat bottom left !important;
+	background-image:url(../images/logoMongoV1.gif);
 	background-repeat: no-repeat;
 	float:left;
 }
 
 #logo div {
-	margin-top: 12px; 	
+	margin-top: 22px; 	
 }
 
 #nav {

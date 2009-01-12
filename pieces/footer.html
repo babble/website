@@ -1,3 +1,88 @@
-			</div>
-	    </div>
-            <% local.pieces.footerBottom(); %>
+<% /**
+*      Copyright (C) 2008 10gen Inc.
+*  
+*    Licensed under the Apache License, Version 2.0 (the "License");
+*    you may not use this file except in compliance with the License.
+*    You may obtain a copy of the License at
+*  
+*       http://www.apache.org/licenses/LICENSE-2.0
+*  
+*    Unless required by applicable law or agreed to in writing, software
+*    distributed under the License is distributed on an "AS IS" BASIS,
+*    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+*    See the License for the specific language governing permissions and
+*    limitations under the License.
+*/ %>
+
+<div class="help">
+    <% if (user) { %>
+        <div class="user">hi <b><%= user.name %></b></div>
+        e: <a href="?edit=true">edit</a> &nbsp; r: rename &nbsp; d: delete &nbsp;
+    	s: <a href="search">search</a> &nbsp; h: <a href="Main">wiki home</a>
+        <br/>
+        ctrl-enter: saves after editing &nbsp; <a href="http://www.10gen.com/wiki/wiki.markup" target="help">markup help</a> &nbsp; <a href="?history=true">history</a>
+    <% } 
+       if( Wiki.config.menuFooter ) Wiki.config.menuFooter(wikiPage);
+    %>
+</div>
+<div>
+<%
+if( wikiPage ) {
+    var childPages = wikiPage.getChildPages(wikiPage);
+    if( childPages.length ) {
+        var third_ceil = Math.ceil(childPages.length/3);
+        var third = Math.floor(childPages.length/3);
+%>
+<hr />
+    <h3>Child Articles</h3>
+	<div class="xgen-column-one-third">
+    <ul>
+    <%
+		childPages.slice(0, third_ceil).forEach(core.modules.wiki.pieces.html.childpagelist);
+	%>
+    </ul>
+	</div>
+	<div class="xgen-column-one-third">
+    <ul style="word-wrap: break-word;">
+    <%
+       childPages.slice(third_ceil, childPages.length - third).forEach(core.modules.wiki.pieces.html.childpagelist);
+    %>
+    </ul>
+    </div>
+    <div class="xgen-column-one-third">
+    <ul>
+    <%
+       childPages.slice(childPages.length - third).forEach(core.modules.wiki.pieces.html.childpagelist);
+    %>
+    </ul>
+	</div>
+<%}%>
+</div>
+
+<% if (!Wiki.config.readOnly) { %>
+    <div class="popup" id="xgen-rename-popup" style="display: none;">
+        <div class="hd">Confirm Page Rename</div>
+        <div class="bd">
+            <form method="POST">
+                <label for="newName">New Page Name:</label> <input type="text" width="40" name="newName" value="<%= wikiPage.name %>" id="newNameInput">
+                <input type="hidden" name="rename" value="true"/>
+            </form>
+        </div>
+        <div class="ft"></div>
+    </div>
+
+    <div class="popup" id="xgen-delete-popup" style="display: none;"></div>
+<% } %>
+</div>
+
+<% if (!Wiki.config.readOnly) { %>
+<form method="POST" enctype="multipart/form-data" >
+   <input type="hidden" name="MAX_FILE_SIZE" value="<%= 1024 * 1024 * 100 %>" />
+   Choose a file to upload: <input name="theFile" type="file" />
+   <input type="submit" value="Upload File" />
+</form>
+<% } } %>
+
+</div>
+</div>
+<% local.pieces.footerBottom(); %>

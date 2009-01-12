@@ -1,8 +1,4 @@
-/*
- * for the user confirmation system
- */
-
-siteName = "Your10genWikiSite";
+siteName = "mongodb";
 
 // user stuff
 core.user.auth();
@@ -11,18 +7,8 @@ User.config.useCaptcha = true;
 User.requirements.confirmed_email = true;
 
 core.core.mail();
-
-/*
- *  we store the name and  password for gmail mail in the database in the "maildata" collection
- *  in a { name : <your_account_name>, passwd : <your password> }
- * 
- *  you need to set this to get the confirmation mail working
- */
-var temp = db.maildata.findOne();
-
-if (temp) {	
-    mail = Mail.SMTP.gmail(temp.name, temp.passwd);
-}
+var temp = db.woop.findOne();
+mail = Mail.SMTP.gmail( "mongodb", "FLORK!" );
 
 function allowed( req , res , uri ){
     user = Auth.getUser( req );
@@ -31,22 +17,32 @@ function allowed( req , res , uri ){
 
 // wiki
 var wikiFooter = function( wikiPage ) {
-    if( !user ) {
+    if( !user && wikiPage ) {
         print( '<a href="userSignup?to='+wikiPage.name+'">Sign Up</a>' );
     }
 }
 
-allowModule = { wiki: { prefix:"pub.",  readOnly:false, nosearch:true, menuFooter: wikiFooter, 
+allowModule = { wiki: {  readOnly:false, nosearch:true, menuFooter: wikiFooter, 
                       },
                 analytics: {}
               };
 
-// init the wiki system so we can use it's routes
+// init the wiki
 core.modules.wiki.wiki();
+core.util.diff();
+core.modules.wiki.pieces.footer_wikipage = local.pieces.footer;
 
 // route all requests to the wiki
 core.core.routes();
-routes = Wiki.routes;
+routes = new Routes();
+
+// modified wiki routes
+routes.search = "/~~/modules/wiki/search";
+routes.rss = "/~~/modules/wiki/rss";
+routes.add( /assets\/.*\.(js|css|jpg|gif|jpeg|png|ico)$/ , "/~~/modules/wiki/$0" );
+routes.add( /\/?(.*)/ , "/index.jxp" , { names : [ "name" ] } );
+
+// our routes
 routes.login = "/login.jxp";
 routes.userSignup = "/userSignup.jxp";
 routes.confirm = "/confirm_email";

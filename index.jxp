@@ -1,3 +1,125 @@
-Welcome to your side.
+<% /**
+*      Copyright (C) 2008 10gen Inc.
+*  
+*    Licensed under the Apache License, Version 2.0 (the "License");
+*    you may not use this file except in compliance with the License.
+*    You may obtain a copy of the License at
+*  
+*       http://www.apache.org/licenses/LICENSE-2.0
+*  
+*    Unless required by applicable law or agreed to in writing, software
+*    distributed under the License is distributed on an "AS IS" BASIS,
+*    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+*    See the License for the specific language governing permissions and
+*    limitations under the License.
+*/ %>
 
-If you can see this, routing isn't working right.
+<%
+core.util.string();
+
+var uri = request.getURI();
+
+// This should be moved to a general handler for all modules
+if( request.getURI().indexOf('~') >= 0 ) {
+    // only allowed if we remapped the url.  otherwise security would be bypassed
+    print("module error 2");
+    return;
+}
+
+// Get the name of the page we are supposed to display. Assume we want the Main page if no page name is provided
+var displayName = request.name;
+if (!displayName) displayName = "Main";
+
+// Construct the full name of the page if we have a prefix defined for this instance
+var name = displayName;
+
+// Get the actual wiki page. If there is no page with the given name, create a new page
+var wikiPage = db.wiki.findOne( { name : name } );
+
+/* check case */
+if( !wikiPage && name && name.length ) {
+    var w = db.wiki.findOne( { name: RegExp("^" + name + "$", "i") } );
+    if( w ) {
+	var nm = w.name;
+	if( Wiki.config.prefix )
+	    nm = nm.lessPrefix(Wiki.config.prefix);
+        response.setResponseCode( 302 );
+        response.setHeader( "Location" , base + nm );
+        return;
+    }
+}
+
+if (!wikiPage) 
+    wikiPage = new Wiki.WikiPage(name);
+
+/* check for redirect */
+if( !request.edit )
+{
+    var x = wikiPage.text.match(/#REDIRECT \[\[([^\]]*)/);
+    if( x && x.length == 2 ) {
+	response.setResponseCode(302);
+	var u = x[1];
+	if( Wiki.config.prefix )
+	    u = u.lessPrefix(Wiki.config.prefix);
+	response.setHeader("Location", base + u);
+    }
+}
+
+if( !user || !( user.hasPermission( "confirmed_email" ) || user.isAdmin() ) ) {
+    core.modules.wiki.pieces.view();
+    return;
+}
+
+// Check to see if we have been asked for an historical version of this wiki page
+var wikiPageHistoricalVersion;
+if (request.version) {
+    wikiPageHistoricalVersion = wikiPage.getWikiPageHistory(request.version);
+    if(! wikiPageHistoricalVersion){
+        log.Wiki.error("Got a request for historical version " + request.version + " but was unable to find it in the database.");
+    }
+    if (request.diff == "true") {
+        wikiPageShowDiff = true;
+    }
+}
+
+var m = null;
+var theFile = request.getFile( "theFile" );
+if (request['rename'] ) {
+    m = new Mail.Message( "rename "+wikiPage.name+" at "+(new Date()), "rename:\n"+wikiPage.name +" to "+request.newName+"\nby "+user.name );
+    Wiki.WikiController.renamePage(wikiPage, request.newName);
+}
+else if ( request['delete']  ) {
+    m = new Mail.Message( "delete "+wikiPage.name+" at "+(new Date()), "delete:\n"+tojson( wikiPage )+"\nby "+user.name );
+    Wiki.WikiController.deletePage(wikiPage);
+}
+else if (theFile) {
+    m = new Mail.Message( "file upload "+wikiPage.name+" at "+(new Date()), "file upload: "+ theFile.filename + " to " + wikiPage.name +" by "+user.name);
+    db._files.save( theFile );
+    wikiPage.files.push(theFile._id);
+    // Note: doesn't create a new historical version.. should it?
+    db.wiki.save(wikiPage);
+}
+if ( ! Wiki.config.readOnly && request['action'] != "Cancel" ){
+    if (request['update'] ) {
+        var text = request.wikitext.replace(/\r?\n/g, "\n");
+        m = new Mail.Message( "edit "+wikiPage.name+" at "+(new Date()), "post edit http://www.mongodb.org/"+wikiPage.name+"\n\n"+ Util.Diff.diffStr( wikiPage.text, text ) + "\nby "+user.name +"\n\nold wiki object: "+tojson(wikiPage));
+        wikiPage.setText( text );
+    }
+}
+
+if ( request.edit )
+    core.modules.wiki.pieces.edit();
+else if ( request.history )
+    core.modules.wiki.pieces.history();
+else if ( request.compare )
+    core.modules.wiki.pieces.compare();
+else
+    core.modules.wiki.pieces.view();
+
+if( mail && m ) {
+    m.addRecipient( "mongodborg@googlegroups.com" );
+    m.send( mail );
+}
+
+%>
+
