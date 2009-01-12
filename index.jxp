@@ -32,6 +32,8 @@ if (!displayName) displayName = "Main";
 
 // Construct the full name of the page if we have a prefix defined for this instance
 var name = displayName;
+if ( Wiki.config.prefix && ! displayName.match( "^" + Wiki.config.prefix ) )
+    name = Wiki.config.prefix + displayName;
 
 // Get the actual wiki page. If there is no page with the given name, create a new page
 var wikiPage = db.wiki.findOne( { name : name } );
@@ -65,6 +67,7 @@ if( !request.edit )
     }
 }
 
+user = Auth.getUser();
 if( !user || !( user.hasPermission( "confirmed_email" ) || user.isAdmin() ) ) {
     core.modules.wiki.pieces.view();
     return;
