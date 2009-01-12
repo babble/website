@@ -8,7 +8,7 @@ User.requirements.confirmed_email = true;
 
 core.core.mail();
 var temp = db.woop.findOne();
-mail = Mail.SMTP.gmail( "mongodb", "FLORK!" );
+mail = Mail.SMTP.gmail( "mongodb", temp.x );
 
 function allowed( req , res , uri ){
     user = Auth.getUser( req );
@@ -22,7 +22,7 @@ var wikiFooter = function( wikiPage ) {
     }
 }
 
-allowModule = { wiki: { prefix:"pub.",  readOnly:false, nosearch:true, menuFooter: wikiFooter, 
+allowModule = { wiki: { prefix: "pub.",  readOnly:false, nosearch:true, menuFooter: wikiFooter, 
                       },
                 analytics: {}
               };
