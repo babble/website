@@ -20,7 +20,7 @@ return parser.toHtml( navStr );
 */
 
 // get page from wiki
-var nav = db.wiki.findOne( { name : "navpane" } );
+var nav = db.wiki.findOne( { name : "pub.navpane" } );
 if( nav ) 
     return nav.getParsedText();
 else
