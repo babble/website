@@ -61,12 +61,12 @@ a#active {
 	color: #bc1d30;
 }
 
-ul li, ul .column-one-third li {
-  background-image: url(../images/list_bullet_blue.gif);
+ul li, ul .xgen-column-one-third li {
+  background-image: url(../images/list_bullet_red.gif);
 }
 
 li.u {
-  background-image: url(../images/list_bullet_blue.gif);
+  background-image: url(../images/list_bullet_red.gif);
 }
 
 div.content {
@@ -207,7 +207,7 @@ div.navbox-api ul {
 div.navbox-api ul li {
   padding-left: 16px;
   list-style-type: none;
-  background-image: url(../images/list_bullet_blue.gif);
+  background-image: url(../images/list_bullet_red.gif);
   background-repeat: no-repeat;
 }
 
@@ -226,7 +226,7 @@ div.navbox-api ul li {
 }
 
 #leftwiki ul li {
-  background-image: url(../images/list_bullet_blue.gif);
+  background-image: url(../images/list_bullet_red.gif);
 }
 
 #leftwiki h3 {
