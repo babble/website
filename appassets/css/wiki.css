@@ -15,17 +15,17 @@ ul {padding-bottom: 0;}
 
 .htmltable a, .htmltable a:visited {
 	font-size: 11px;
-	color: #2c65af;
+	color: #bc1d30;
 	text-decoration: none;
 	font-weight:normal;
 }
 
 .htmltable a:hover {
-	color: #0f2659;
+	color: #941e2f;
 }
 
 .htmltable a#active {
-	color: #2c65af;
+	color: #bc1d30;
 }
 
 table.wikitable {
@@ -48,17 +48,17 @@ table.wikitable td {
 }
 
 a, a:visited {
-	color: #2c65af;
+	color: #bc1d30;
 }
 
 a:hover {
-	color: #0f2659;
-	border-bottom: 1px dotted #0f2659;
+	color: #941e2f;
+	border-bottom: 1px dotted #941e2f;
 	*border-bottom: 1px solid;
 }
 
 a#active {
-	color: #2c65af;
+	color: #bc1d30;
 }
 
 ul li, ul .column-one-third li {
@@ -81,7 +81,7 @@ div.content p {
 }
 
 a.chapter, a.chapter:visited, a.chapter:hover {
-    background-color: #2c65af; 
+    background-color: #bc1d30; 
     padding: 5px; 
     margin: 2px;
     color: #fff; 
