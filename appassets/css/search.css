@@ -7,17 +7,17 @@ tr.white-main td a.no-wrap {
 }
 
 a, a:visited {
-	color: #2c65af;
+	color: #bc1d30;
 }
 
 a:hover {
-	color: #0f2659;
-	border-bottom: 1px dotted #0f2659;
+	color: #941e2f;
+	border-bottom: 1px dotted #941e2f;
 	*border-bottom: 1px solid;
 }
 
 a#active {
-	color: #2c65af;
+	color: #bc1d30;
 }
 
 span.highlight {

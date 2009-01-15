@@ -8,7 +8,6 @@ User.requirements.confirmed_email = true;
 
 core.core.mail();
 var temp = db.woop.findOne();
-mail = Mail.SMTP.gmail( "mongodb", temp.x );
 
 function allowed( req , res , uri ){
     user = Auth.getUser( req );
